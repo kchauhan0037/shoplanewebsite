@@ -1,27 +1,27 @@
 
 
 // var slider=document.getElementById('slider')
-var topbar=document.getElementById('topbar')
+// var topbar=document.getElementById('topbar')
 
 
-topbar.innerHTML+=`<div id="left-menu">
-<div id="logo">
-    <a href="./homrpage.html"><span>SHOP</span>lane</a>
-</div>
-<a href="">Clothing</a>
-<a href="">Accessories</a>
-</div>
-<div id="search-wrapper">
-<i class="fa-solid fa-magnifying-glass"></i>
-<input id="search-box" type="text" name="search" placeholder="Search for Clothing and Accessories">
-</div>
-<div id="right-menu">
-                <div id="cart-wrapper">
-                    <p id="cart-count">0</p>
-                    <a href="/checkout.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
-                </div>
-                <img src="">
-            </div>`
+// topbar.innerHTML+=`<div id="left-menu">
+// <div id="logo">
+//     <a href="./homrpage.html"><span>SHOP</span>lane</a>
+// </div>
+// <a href="">Clothing</a>
+// <a href="">Accessories</a>
+// </div>
+// <div id="search-wrapper">
+// <i class="fa-solid fa-magnifying-glass"></i>
+// <input id="search-box" type="text" name="search" placeholder="Search for Clothing and Accessories">
+// </div>
+// <div id="right-menu">
+//                 <div id="cart-wrapper">
+//                     <p id="cart-count">0</p>
+//                     <a href="/checkout.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+//                 </div>
+//                 <img src="./user.jpg">
+//             </div>`
 
 
 
@@ -115,8 +115,7 @@ footer.innerHTML=`<div>
 
 
 
-
-// slider.innerHTML+=`<div class="owl-carousel owl-theme owl-loaded owl-drag">
+// `<div class="owl-carousel owl-theme owl-loaded owl-drag">
             
 // <div class="owl-stage-outer">
   
@@ -230,3 +229,17 @@ footer.innerHTML=`<div>
 //     autoplayTimeout:1000,
 //     autoplayHoverPause:true
 // });
+
+
+$(document).ready(function() {
+    var owl = $('.owl-carousel');
+    owl.owlCarousel({
+        items: 1, // Adjust the number of items displayed per slide
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 3000, // Adjust autoplay timeout in milliseconds
+        autoplayHoverPause: true,
+        dots: true // Show dots for navigation
+    });
+});

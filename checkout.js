@@ -1,26 +1,27 @@
 
 
-var topbar=document.getElementById('topbar')
+// var topbar=document.getElementById('topbar')
 
 
-topbar.innerHTML+=`<div id="left-menu">
-<div id="logo">
-    <a href="./homrpage.html"><span>SHOP</span>lane</a>
-</div>
-<a href="./homrpage.html">Clothing</a>
-<a href="./homrpage.html">Accessories</a>
-</div>
-<div id="search-wrapper">
-<i class="fa-solid fa-magnifying-glass"></i>
-<input id="search-box" type="text" name="search" placeholder="Search for Clothing and Accessories">
-</div>
-<div id="right-menu">
-                <div id="cart-wrapper">
-                    <p onclick="cartitemstore()" id="cart-count">0</p>
-                    <a href="/checkout.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
-                </div>
-                <img src="">
-            </div>`
+// topbar.innerHTML+=`<div id="left-menu">
+// <div id="logo">
+//     <a href="./homrpage.html"><span>SHOP</span>lane</a>
+// </div>
+// <a href="./homrpage.html">Clothing</a>
+// <a href="./homrpage.html">Accessories</a>
+// </div>
+// <div id="search-wrapper">
+// <i class="fa-solid fa-magnifying-glass"></i>
+// <input id="search-box" type="text" name="search" placeholder="Search for Clothing and Accessories">
+// </div>
+// <div id="right-menu">
+//                 <div id="cart-wrapper">
+//                     <p setvalue() onclick="cartitemstore()" id="cart-count">0</p>
+//                     <a href="/checkout.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+//                 </div>
+//                 <img src="./user.jpg">
+//             </div>
+//             `
 
 
             var footer=document.getElementById('footerpage')
@@ -28,7 +29,7 @@ footer.innerHTML=`<div>
             
 <p class="footer-heading">Online Store</p>
 <a href="http://127.0.0.1:5501/homrpage.html" class="footer-link">Men Clothing</a>
-<a href=http://127.0.0.1:5501/homrpage.html/" class="footer-link">Women Clothing</a>
+<a href="http://127.0.0.1:5501/homrpage.html/" class="footer-link">Women Clothing</a>
 <a href="http://127.0.0.1:5501/homrpage.html" class="footer-link">Men Accessories</a>
 <a href="http://127.0.0.1:5501/homrpage.html" class="footer-link">Women Accessories</a>
 
@@ -100,7 +101,7 @@ for (var k = 0; k < uniqueItems.length; k++) {
         <div><img class="checkout-product-img" src="${uniqueItems[k].picture}"></div>
         <div>
             <h4>${uniqueItems[k].productname}</h4>
-            <p >X${countarr[k]}</p>
+            <p >x ${countarr[k]}</p>
             <p><span>Amount: Rs </span><span>${uniqueItems[k].price}</span></p>
         </div>
     </div>
@@ -120,16 +121,15 @@ placeorder.addEventListener('click', function() {
 });
 
 function posttingrequest(data) {
-    var endpoint = 'https://5d76bf96515d1a0014085cf9.mockapi.io/order'; // Replace with your API endpoint
-    var headers = {
-        'Content-Type': 'application/json', // Check API documentation for the required content type
-    };
+
+    alert("your order has been placed")
+    var prdct = data;
 
     $.ajax({
-        url: endpoint,
+        url: 'https://5d76bf96515d1a0014085cf9.mockapi.io/order',
         method: 'POST',
-        headers: headers,
-        data: JSON.stringify(data), // Make sure the request body matches the API's expected format
+        data: JSON.stringify(prdct),
+        contentType: 'application/json',
         success: function(response) {
             console.log('Response:', response);
         },
@@ -138,5 +138,4 @@ function posttingrequest(data) {
         }
     });
 }
-
 

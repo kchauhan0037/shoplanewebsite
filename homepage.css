@@ -26,7 +26,7 @@ main {
 }
 .owl-item {width: 128.906px; margin-right: 10px; background:powderblue; }
 
-.owl-theme .owl-dots .owl-dot{ display:none!important;}
+/* .owl-theme .owl-dots .owl-dot{ display:none!important;} */
 
 
 
@@ -224,4 +224,11 @@ footer > div {
     text-transform: uppercase;
     font-size: 14px;
     opacity: 0.8;
+}
+
+
+#slider{
+    width: 85%;
+    margin:0 auto ;
+    
 }

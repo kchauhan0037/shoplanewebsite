@@ -14,10 +14,10 @@ topbar.innerHTML+=`<div id="left-menu">
 </div>
 <div id="right-menu">
                 <div id="cart-wrapper">
-                    <p  id="cart-count">0</p>
+                    <p  id="cart-count"></p>
                     <a href="/checkout.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
                 </div>
-                <img src="">
+                <img src="./user.jpg">
             </div>`
 
 
@@ -48,7 +48,7 @@ $.get(`https://5d76bf96515d1a0014085cf9.mockapi.io/product/${pid}`,function(resp
 
                     
 
-                    <button onclick="cartitemstore('${product.name}','${product.price}','${product.preview}','${product.id}') " id="btn-add-to-cart">Add to Cart</button>
+                    <button onclick="cartitemstore('${product.name}','${product.price}','${product.preview}','${product.id}') ; setvalue()" id="btn-add-to-cart">Add to Cart</button>
 
                 </div>`
 
@@ -127,8 +127,7 @@ function cartitemstore(name,price,photo,id){
         localStorage.setItem('cartitem',JSON.stringify(productfromlocalstorage))
     }
     
-    var cartcount = document.getElementById('cart-count')
-    cartcount.innerText = `${productfromlocalstorage.length}`
+    
 
 }
 
@@ -172,7 +171,11 @@ footer.innerHTML=`<div>
 
         
 
+function setvalue(){
+    var cartcount = document.getElementById('cart-count')
+    cartcount.innerText = `${parseInt(productfromlocalstorage.length)}`
 
+}
 
     
-
+setvalue()
