@@ -46,7 +46,7 @@ $.get('https://5d76bf96515d1a0014085cf9.mockapi.io/product',function(response){
         if(product[i].isAccessory==false){
             clothing_grid.innerHTML+=`
             <div class="product-card" onclick="storeinlocal(${product[i].id})">
-            <a href="http://127.0.0.1:5501/product_detalis.html">
+            <a href="./product_detalis.html?p=" + product[i].id>
             <img class="product-image" src="${ product[i].preview}" alt="Men Navy Blue Solid Sweatshirt Pic">
             </a>
             <div class="product-meta">
@@ -58,7 +58,7 @@ $.get('https://5d76bf96515d1a0014085cf9.mockapi.io/product',function(response){
         }else{
             accessory_grid.innerHTML+=`
             <div class="product-card" onclick="storeinlocal(${product[i].id})">
-            <a href="http://127.0.0.1:5501/product_detalis.html">
+            <a href="./product_detalis.html?p=" + product[i].id>
             <img class="product-image" src="${ product[i].preview}" alt="Men Navy Blue Solid Sweatshirt Pic">
             </a>
             <div class="product-meta">
